@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Art Gallery</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Digital Art Gallery</h1>
+    <nav>
+      <ul>
+        <li><a id="logout-link" href="login.html">Logout</a></li>
+        <li><a id="login-link" href="login.html">Login</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+<main>
+  <section id="art-gallery">
+    <div id="gallery"></div> <!-- This holds the images -->
+  </section>
+  <!-- File input and upload button -->
+  <input type="file" id="file-input" multiple>
+  <button id="upload-button">Upload</button>
+  <script type="module" src="./fileupload/upload.js"></script>
+</main>
+
+  <footer>
+    <p>Author: <a href="https://github.com/sudodragoness">Emily Berry</a></p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+  <script type="module" src="./auth-check.js"></script>
+</body>
+</html>
+

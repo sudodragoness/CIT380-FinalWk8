@@ -1,0 +1,35 @@
+/* flexbox.css */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;  /* Increased space between images */
+  justify-content: center;
+  padding: 20px;
+}
+
+.art-piece {
+  flex: 1 1 280px; /* Adjusted size for better responsiveness */
+  max-width: 350px;
+  position: relative; /* For positioning delete button */
+  transition: transform 0.3s ease; /* For smooth scaling effect */
+}
+
+/* Hover effect for scaling images */
+.art-piece:hover {
+  transform: scale(1.05);
+}
+
+.art-piece img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Adding smooth transitions */
+}
+
+/* Hover effect for images */
+.art-piece:hover img {
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);  /* Slight zoom effect */
+}

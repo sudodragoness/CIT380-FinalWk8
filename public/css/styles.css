@@ -1,0 +1,230 @@
+/* Universal reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    color: #444;
+    line-height: 1.8;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Main Section */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%; /* Ensure it takes up full width */
+}
+
+/* About Page Section */
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.about ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.about ul li a {
+    font-weight: bold;
+}
+
+/* Gallery Layout */
+#art-gallery {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 images per row for a bit larger images */
+    gap: 30px;  /* Increased gap to make it look more spacious */
+    padding: 20px;
+    justify-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Art Piece Container */
+.art-piece {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Increased height to give more space for larger images */
+}
+
+/* Art Piece Image */
+.art-piece img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Images */
+.art-piece:hover {
+    transform: scale(1.05);
+}
+
+.art-piece:hover img {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+}
+
+/* Styling for the Delete Button */
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Hover Effect for Delete Button */
+.delete-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Styling for the Upload Button */
+.upload-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Hover Effect for the Upload Button */
+.upload-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Focus Effect for Accessibility */
+.upload-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);  /* 3 images per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);  /* 2 images per row on small screens */
+    }
+
+    .upload-button {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;  /* 1 image per row on very small screens */
+    }
+}

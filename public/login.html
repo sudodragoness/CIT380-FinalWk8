@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Art Gallery | Login</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/flexbox.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/register.css">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+    <header>
+      <nav>
+        <a href="artgallery.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+      <h1>Login</h1>
+    </header>
+    <main>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button id="login-button" type="button">Login</button> <!-- Prevent form submit here -->
+            <a href="register.html">Register</a>
+        </form>
+
+        <!-- Message will be appended below the form -->
+        <div id="message-container"></div>
+    </main>
+    <footer>
+        <p>Author: <a href="https://github.com/sudodragoness">Emily Berry</a></p>
+    </footer>
+
+    <script src="./lib/service-helpers.js"></script>
+    <script src="./lib/auth.service.js"></script>
+    <script type="module" src="app.js"></script> <!-- Removed extra > -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Check if there's a success message in localStorage
+        const successMessage = localStorage.getItem('registration-success');
+        
+        if (successMessage) {
+          // Display the success message below the login form
+          const messageElement = document.createElement('p');
+          messageElement.textContent = successMessage;
+          messageElement.style.color = 'green';  // Optional: style the message as success
+          document.getElementById('message-container').appendChild(messageElement);  // Append to message-container
+    
+          // Clear the success message from localStorage after displaying it
+          localStorage.removeItem('registration-success');
+        }
+      });
+    </script>    
+</body>
+</html>
